@@ -1,0 +1,88 @@
+.participants-section {
+    margin-bottom: 32px;
+
+    h4 {
+        margin: 0 0 16px 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #374151;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        &::before {
+            content: "";
+            width: 4px;
+            height: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+    }
+
+    .participants-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .participant-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.2s ease;
+
+            &:hover {
+                border-color: #667eea;
+                box-shadow: 0 2px 4px rgba(102, 126, 234, 0.1);
+            }
+
+            .participant-info {
+                .participant-name {
+                    font-weight: 600;
+                    color: #1f2937;
+                    margin-bottom: 2px;
+                }
+
+                .participant-email {
+                    font-size: 0.875rem;
+                    color: #6b7280;
+                }
+            }
+
+            .participant-times {
+                text-align: right;
+
+                .join-time,
+                .leave-time {
+                    font-size: 0.875rem;
+                    color: #6b7280;
+                    margin-bottom: 2px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .participants-section {
+        .participants-list {
+            .participant-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+
+                .participant-times {
+                    text-align: left;
+                }
+            }
+        }
+    }
+} 

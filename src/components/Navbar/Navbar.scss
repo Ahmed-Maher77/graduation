@@ -1,0 +1,87 @@
+@import "../../App.scss";
+
+%navTrigger {
+    cursor: pointer;
+    transition: $trans-3;
+    &:hover {
+        color: var(--orange-c);
+    }
+    @media (min-width: 1024px) {
+        display: none;
+    }
+}
+
+.Navbar {
+    .container {
+        h1 {
+            transition: $trans-3;
+            span {
+                transition: $trans-3;
+            }
+            &:hover {
+                color: var(--orange-c);
+                span {
+                    color: var(--white-c);
+                }
+            }
+        }
+        .fa-bars {
+            @extend %navTrigger;
+        }
+        nav {
+            transition: $trans-3;
+            z-index: 99;
+            @media (max-width: 1024px) {
+                & {
+                    min-height: calc(100vh - 100px);
+                    overflow-y: auto;
+                }
+            }
+            ul {
+                .fa-xmark {
+                    @extend %navTrigger;
+                }
+                li {
+                    a {
+                        transition: $trans-3;
+                        &:not(.login-btn):hover, &:not(.login-btn).active {
+                            color: var(--orange-c);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.login-btn {
+    background: transparent;
+    padding-block: 6px;
+    padding-inline: 15px;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    box-shadow: 0 0 1px 2px #c6c6c638;
+    transition: $trans-3;
+    width: fit-content;
+    margin-inline-end: auto;
+    margin-inline-start: 25px;
+    &:hover {
+        color: var(--main-color) !important;
+        background: var(--white-c) !important;
+    }
+}
+@media (max-width: 991.9px) {
+    .login-btn {
+        margin-inline: 10px;
+        width: calc(100% - 20px);
+        justify-content: center;
+        background-color: var(--white-c);
+        color: var(--main-color);
+    }
+}
+
+// @media (max-width: 1024px) {
+//     .Navbar .container nav {
+//         box-shadow: 0px 0px 5px 5px red !important;
+//     }
+// }
